@@ -7,3 +7,5 @@ try {
     names = false
 }
 console.log(names);
+
+//WRITEFILE APPENDFILE

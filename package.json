@@ -1,0 +1,23 @@
+{
+  "name": "APIfun",
+  "version": "1.0.0",
+  "description": "Testing API and playground",
+  "main": "fsaccess.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dkasyan/APIfun.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dkasyan/APIfun/issues"
+  },
+  "homepage": "https://github.com/dkasyan/APIfun#readme",
+  "dependencies": {
+    "node-fetch": "^2.6.0"
+  }
+}
