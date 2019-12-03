@@ -14,6 +14,10 @@ request(url, {json: true}, (err, res, body) => {
     }
     
     const message = `Srednia cena ${body.currency} w dniu ${body.rates[0].effectiveDate} wynosi ${body.rates[0].mid}`
-    console.log(message)
+    console.log(message);
+
+    fs.appendFile('dumpnbp.txt', message + `\n`, (err) => {
+        console.log("dane dodane do pliku");
+    })
     
 })
