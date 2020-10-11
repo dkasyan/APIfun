@@ -20,5 +20,6 @@ pyvenv.cfg
 .venv
 pip-selfcheck.json
 __pycache__/*
+curency.csv
 
 # End of https://www.toptal.com/developers/gitignore/api/venv
