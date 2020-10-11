@@ -7,7 +7,7 @@ data = response.json()[0]
 data_dict = data.keys()
 print(type(data))
 print(data_dict)
-#print(data_dict['rates'])
+print(data_dict['rates'])
 #print(data.dumps("\"table\currency")
 #print(data.keys())
 
