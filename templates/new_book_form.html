@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label for="name">Tytuł: </label>
+        <input type="text" id="tytul" name="tytul"><br>
+        <label for="name">Autor: </label>
+        <input type="text" id="author" name="author"><br>
+    
+        <p>Czyja:</p>
+        <label for="female">Gaba</label>
+        <input type="radio" id="female" name="gender" value="female"><br>
+    
+        <label for="male">Damian</label>
+        <input type="radio" id="male" name="gender" value="male"><br>
+    
+        <p>Wersja:</p>
+        <label for="version">Cyfrowa</label>
+        <input type="checkbox" id="digital" name="version" value="digital"><br>
+        <label for="version">Cyfrowa Prywatna</label>
+        <input type="checkbox" id="analog" name="version" value="analog"><br>
+    
+
+        <label for="name">Rok Wydania: </label>
+        <input type="text" id="print_year" name="print_year"><br>
+        <p> </p>
+        <label for="description">Opis</label>
+        <textarea cols=80 rows=4 type="textbox" id="description" name="description" placeholder="Opis..."></textarea><br>
+        <p> </p>
+
+        <form method="post" enctype=multipart/form-data>
+            <label for="img">Obrazek</label>
+            <input type="file" name="file">
+            <input type="submit" value="upload">
+        </form>
+        
+        <input type="submit" value="send">
+        <p>dane jak tytuł książki, autora, opis, rok wydania, możesz też spróbować dodać pole pliku, w którym wstawiać można by było zdjęcie okładki.</p>
+    </form>
+</body>
+</html>
+
