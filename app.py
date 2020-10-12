@@ -1,7 +1,11 @@
 import requests
 import csv
 import json
+from flask import Flask
+from flask import request
+from flask import redirect
 
+app = Flask(__name__)
 
 def data_structure():
     with open('curency.csv', 'w', newline='') as csvfile:
@@ -25,6 +29,16 @@ print(type(new_data))
 data_structure()
 for i in new_data:
     outputing_data(i["currency"], i["code"], i["bid"], i["ask"])
+
+
+
+@app.route('/', methods=['GET'])
+def message():
+   # print(request.form)
+    my_name = "Damian"
+    return f'Hello, {my_name}!'
+   # return redirect('/cc_form.html')
+
 
 
 ### To do zapisu
