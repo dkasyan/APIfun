@@ -2,30 +2,29 @@ import requests
 import csv
 import json
 
+
+def data_structure():
+    with open('curency.csv', 'w', newline='') as csvfile:
+        spamwriter = csv.writer(csvfile, delimiter=' ',
+                                quotechar=';', quoting=csv.QUOTE_MINIMAL)
+        spamwriter.writerow(['currency', 'code', 'bid', 'ask'])
+
+def outputing_data(currency, code, bid, ask):
+    with open('curency.csv', 'a', newline='') as csvfile:
+        spamwriter = csv.writer(csvfile, delimiter=' ',
+                            quotechar=';', quoting=csv.QUOTE_MINIMAL)
+        spamwriter.writerow([currency, code, bid, ask])
+ 
+
 response = requests.get("http://api.nbp.pl/api/exchangerates/tables/C?format=json")
 data = response.json()[0]
-data_dict = data.keys()
-print(type(data))
-print(data_dict)
-print(data_dict['rates'])
-#print(data.dumps("\"table\currency")
-#print(data.keys())
+new_data = data['rates']
+print(type(new_data))
+#print(new_data)
 
-#print(data["currency"])
-
-
-
-#data = {"data": {
-#  "id": 1,
-#  "name": "Something",
-#  "colors": ["red", "blue"]
-#  }
-#}
-
-#print(type(data))
-# <class 'dict'>
-
-
+data_structure()
+for i in new_data:
+    outputing_data(i["currency"], i["code"], i["bid"], i["ask"])
 
 
 ### To do zapisu
@@ -33,3 +32,4 @@ print(data_dict['rates'])
 #    spamwriter = csv.writer(csvfile, delimiter=' ',
 #                            quotechar=';', quoting=csv.QUOTE_MINIMAL)
 #    spamwriter.writerow(['currency', 'code', 'bid', 'ask'])
+
