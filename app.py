@@ -4,6 +4,7 @@ import json
 from flask import Flask
 from flask import request
 from flask import redirect
+from flask import render_template
 
 app = Flask(__name__)
 
@@ -18,7 +19,8 @@ def outputing_data(currency, code, bid, ask):
         spamwriter = csv.writer(csvfile, delimiter=' ',
                             quotechar=';', quoting=csv.QUOTE_MINIMAL)
         spamwriter.writerow([currency, code, bid, ask])
- 
+
+
 
 response = requests.get("http://api.nbp.pl/api/exchangerates/tables/C?format=json")
 data = response.json()[0]
@@ -35,8 +37,7 @@ for i in new_data:
 @app.route('/', methods=['GET'])
 def message():
    # print(request.form)
-    my_name = "Damian"
-    return f'Hello, {my_name}!'
+    return render_template("cc_form.html")
    # return redirect('/cc_form.html')
 
 
