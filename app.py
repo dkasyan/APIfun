@@ -37,11 +37,11 @@ def outputing_data(currency, code, bid, ask):
 @app.route('/', methods=['GET', 'POST'])
 def message():
     if request.method == "POST":
-        print("dupa")
         datas = request.form
         currency = datas.get('currency')
-        author = datas.get("author")
-        print(datas)
+        quantity = datas.get("quantity")
+        print(currency)
+        print(quantity)
 
     return render_template("cc_form.html")
      
