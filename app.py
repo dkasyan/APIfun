@@ -34,12 +34,14 @@ for i in new_data:
 
 
 
-@app.route('/', methods=['GET', 'Post'])
+@app.route('/', methods=['GET'])
 def message():
-    if request.method == "POST":
+    if request.method == "GET":
         data = request.form
-        username = data.get('username')
-        password = data.get("password")
+        currency = data.get('currency')
+        author = data.get("author")
+        print(currency)
+        print(author)
 
    # print(request.form)
     return render_template("cc_form.html")
