@@ -20,17 +20,24 @@ def outputing_data(currency, code, bid, ask):
                             quotechar=';', quoting=csv.QUOTE_MINIMAL)
         spamwriter.writerow([currency, code, bid, ask])
 
+def count_purchases(cur, quan):
+    quant = int(quan)
+    for i in new_data:
+        random = [i["currency"], i["code"], i["bid"], i["ask"]]
+        if random[1] == cur:
+            return (quant * i["ask"]) 
 
 
-#response = requests.get("http://api.nbp.pl/api/exchangerates/tables/C?format=json")
-#data = response.json()[0]
-#new_data = data['rates']
-##print(type(new_data))
-##print(new_data)
+### Parsowanie danych z api
+response = requests.get("http://api.nbp.pl/api/exchangerates/tables/C?format=json")
+data = response.json()[0]
+new_data = data['rates']
 
-#data_structure()
-#for i in new_data:
-#    outputing_data(i["currency"], i["code"], i["bid"], i["ask"])
+
+### Zapisywanie danych do pliku
+data_structure()
+for i in new_data:
+    outputing_data(i["currency"], i["code"], i["bid"], i["ask"])
 
 
 
@@ -40,8 +47,10 @@ def message():
         datas = request.form
         currency = datas.get('currency')
         quantity = datas.get("quantity")
-        print(currency)
-        print(quantity)
+        ask = count_purchases(currency, quantity)
+        return f'Zapłacisz {ask} zł'
+        #print(currency)
+        #print(quantity)
 
     return render_template("cc_form.html")
      
