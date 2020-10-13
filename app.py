@@ -34,8 +34,9 @@ for i in new_data:
 
 
 
-@app.route('/', methods=['GET'])
+@app.route('/', methods=['GET', 'Post'])
 def message():
+    if 
    # print(request.form)
     return render_template("cc_form.html")
    # return redirect('/cc_form.html')
