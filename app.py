@@ -40,6 +40,7 @@ def message():
         data = request.form
         currency = data.get('currency')
         author = data.get("author")
+        print(data)
         print(currency)
         print(author)
 
