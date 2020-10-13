@@ -36,7 +36,11 @@ for i in new_data:
 
 @app.route('/', methods=['GET', 'Post'])
 def message():
-    if 
+    if request.method == "POST":
+        data = request.form
+        username = data.get('username')
+        password = data.get("password")
+
    # print(request.form)
     return render_template("cc_form.html")
    # return redirect('/cc_form.html')
